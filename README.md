@@ -319,13 +319,6 @@ git clone https://github.com/SamridhPathak/xeno-crm.git
 cd xeno-crm
 ```
 
-## Backend
-
-```bash
-cd backend
-pip install -r requirements.txt
-```
-
 ## Frontend
 
 ```bash
@@ -334,28 +327,30 @@ npm install
 npm run dev
 ```
 
+## Backend
+
+```bash
+cd backend
+pip install -r requirements.txt
+python -m uvicorn app.main:app --reload --port 8000
+```
+
 ## Start PostgreSQL & Redis
 
 ```bash
 docker compose up -d
 ```
 
-## Start Backend
-
-```bash
-uvicorn app.main:app --reload
-```
-
 ## Start Celery Worker
 
 ```bash
-celery -A app.tasks worker --loglevel=info
+python -m celery -A app.tasks.callback_tasks worker --pool=solo --loglevel=info 
 ```
 
 ## Start Channel Service
 
 ```bash
-uvicorn app.main:app --reload --port 8001
+python -m uvicorn app.main:app --port 8001 
 ```
 ---
 
