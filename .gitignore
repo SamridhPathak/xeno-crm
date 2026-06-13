@@ -1,7 +1,12 @@
 # Python
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
+*.pyd
+
+# Virtual Environments
+venv/
+.venv/
+env/
 
 # Environment files
 .env
@@ -10,8 +15,9 @@ __pycache__/
 # Node
 node_modules/
 
-# Vite
+# Build
 dist/
+build/
 
 # Logs
 *.log
