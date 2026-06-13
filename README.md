@@ -285,29 +285,28 @@ This ensures uninterrupted CRM operations.
 
 # 📸 Screenshots
 
-### Dashboard
-
-Coming Soon
-
 ### AI Copilot
+<img width="959" height="503" alt="01_ai-copilot-home" src="https://github.com/user-attachments/assets/7e303f59-013a-42b7-9d11-e77e5fcfe9bd" />
+<img width="959" height="503" alt="02_ai-copilot-launch" src="https://github.com/user-attachments/assets/a7c74909-a945-4e66-8a6b-b8c19731d794" />
 
-Coming Soon
+### Dashboard
+<img width="959" height="503" alt="03_dashboard" src="https://github.com/user-attachments/assets/628ccff5-2694-444f-965f-ca12b19fce4e" />
+
 
 ### Customers
+<img width="959" height="498" alt="04_customers" src="https://github.com/user-attachments/assets/c1a3f4b0-ef3e-4cd8-ac7a-fb8897cd2cc7" />
 
-Coming Soon
 
 ### Segments
+<img width="959" height="500" alt="05_segments" src="https://github.com/user-attachments/assets/66e12a8f-ff48-4541-a470-26f94d73bd27" />
 
-Coming Soon
 
 ### Campaigns
+<img width="959" height="485" alt="06_campaigns" src="https://github.com/user-attachments/assets/ffe7f430-0131-485a-8daf-71f31ee73e3f" />
 
-Coming Soon
 
 ### Campaign Analytics
-
-Coming Soon
+<img width="959" height="502" alt="07_campaign-analytics" src="https://github.com/user-attachments/assets/11256fe9-0b19-4e33-ae64-92465045281d" />
 
 ---
 
@@ -358,35 +357,15 @@ celery -A app.tasks worker --loglevel=info
 ```bash
 uvicorn app.main:app --reload --port 8001
 ```
-
----
-
-# 🎯 Learning Outcomes
-
-This project demonstrates:
-
-* Full Stack Development
-* Distributed System Design
-* Event Driven Architecture
-* AI Integration
-* Asynchronous Processing
-* Database Design
-* API Development
-* Analytics Engineering
-* Production-Style Backend Design
-
 ---
 
 # 🔮 Future Improvements
 
 * Multi-Channel Campaign Scheduling
 * Role Based Access Control (RBAC)
-* Campaign A/B Testing
-* Advanced Analytics Dashboard
 * Real Email/SMS Integrations
 * Customer Journey Automation
 * Campaign Templates Library
-* Predictive Customer Segmentation
 
 ---
 
