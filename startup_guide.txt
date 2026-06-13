@@ -1,0 +1,75 @@
+========================================
+XenoCRM STARTUP GUIDE
+========================================
+
+TERMINAL 1 — CHANNEL SERVICE
+----------------------------------------
+cd channel-service
+
+python -m uvicorn main:app --reload --port 8001
+
+Open:
+http://localhost:8001/docs
+
+========================================
+
+TERMINAL 2 — BACKEND
+----------------------------------------
+cd backend
+
+python -m uvicorn app.main:app --reload --port 8000
+
+Open:
+http://localhost:8000/docs
+
+========================================
+
+TERMINAL 3 — FRONTEND
+----------------------------------------
+cd frontend
+
+npm run dev
+
+Open:
+http://localhost:5173
+
+========================================
+
+EXPECTED PORTS
+----------------------------------------
+Backend         → 8000
+Channel Service → 8001
+Frontend        → 5173
+
+========================================
+
+IF PORT 8001 ERROR APPEARS
+----------------------------------------
+
+Check:
+
+netstat -ano | findstr :8001
+
+Find process:
+
+tasklist | findstr <PID>
+
+If localhost:8001/docs opens:
+→ Service already running
+→ Leave it alone
+
+========================================
+
+STOP SERVICES
+----------------------------------------
+
+Backend:
+CTRL + C
+
+Frontend:
+CTRL + C
+
+Channel Service:
+CTRL + C
+
+========================================
