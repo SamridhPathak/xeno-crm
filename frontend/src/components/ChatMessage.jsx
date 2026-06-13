@@ -276,7 +276,7 @@ function TemplateCard({ template, channel }) {
         borderBottom: "1px solid rgba(255,255,255,0.06)",
       }}>
         <span style={{ fontSize: "0.72rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--text-muted)", display: "flex", alignItems: "center", gap: "6px" }}>
-          {channelIcon} <span style={{ color: "#60A5FA" }}>{channelKey.toUpperCase()}</span> <span>Template</span>
+          {channelIcon} <span>Template</span>
         </span>
         <span style={{
           fontSize: "0.65rem",
