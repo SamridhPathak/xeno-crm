@@ -13,7 +13,7 @@ request handling) and the async Celery task chain.
 import logging
 import random
 
-from app.tasks.callback_tasks import simulate_delivery
+from app.tasks.callback_tasks import start_delivery_thread
 
 logger = logging.getLogger(__name__)
 
@@ -61,9 +61,9 @@ def process_send_request(
         initial_delay = random.uniform(1.0, 3.0)
 
         try:
-            simulate_delivery.apply_async(
-                args=[communication_id],
-                countdown=initial_delay,
+            start_delivery_thread(
+                communication_id=communication_id,
+                initial_delay=initial_delay,
             )
             dispatched += 1
 
