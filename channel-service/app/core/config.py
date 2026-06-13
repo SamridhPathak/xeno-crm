@@ -28,8 +28,6 @@ class Settings(BaseSettings):
     APP_VERSION: str = "1.0.0"
     DEBUG: bool = False
 
-    # ── Redis (Celery broker + result backend) ───────────────────
-    REDIS_URL: str = "redis://localhost:6379/0"
 
     # ── CRM Backend ─────────────────────────────────────────────
     CRM_CALLBACK_URL: str = "http://localhost:8000"
