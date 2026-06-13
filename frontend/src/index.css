@@ -1324,15 +1324,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .message {
   display: flex;
-  max-width: 75%;
+  width: 100%;
 }
 
 .message.user {
   align-self: flex-end;
+  justify-content: flex-end;
+  width: auto;
+  max-width: 72%;
 }
 
 .message.assistant {
   align-self: flex-start;
+  width: 100%;
 }
 
 .msg-bubble {
@@ -1353,6 +1357,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid var(--border-color);
   color: var(--text-primary);
   border-bottom-left-radius: 4px;
+  width: 100%;
 }
 
 .msg-text {
@@ -1361,8 +1366,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .preview-bubble {
-  max-width: 520px;
-  width: 520px;
+  max-width: 100%;
+  width: 100%;
 }
 
 .preview-card {
@@ -2415,6 +2420,7 @@ span[style*="ef4444"] {
 .message.assistant .msg-bubble {
   background: linear-gradient(135deg, rgba(30,41,59,0.95), rgba(22,31,47,0.9)) !important;
   border: 1px solid rgba(255,255,255,0.06) !important;
+  width: 100% !important;
 }
 
 .message.user .msg-bubble {
@@ -3527,3 +3533,69 @@ span[style*="ef4444"] {
   gap: 8px;
 }
 
+
+/* ═══════════════════════════════════════════════════════════════════
+   FINAL POLISH LAYER — added on top of enhancement layer
+═══════════════════════════════════════════════════════════════════ */
+
+/* Segment card — tighter grid on wide screens */
+.segments-grid {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+}
+
+/* "View Analytics" button in campaign list — accent outline style */
+.campaigns-list .btn-secondary,
+.campaign-card .btn-secondary {
+  background: transparent !important;
+  border: 1px solid rgba(37,99,235,0.4) !important;
+  color: #60A5FA !important;
+  font-size: 0.82rem !important;
+  padding: 8px 16px !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease !important;
+}
+.campaigns-list .btn-secondary:hover,
+.campaign-card .btn-secondary:hover {
+  background: rgba(37,99,235,0.12) !important;
+  border-color: rgba(37,99,235,0.7) !important;
+  box-shadow: 0 0 14px rgba(37,99,235,0.2) !important;
+  color: #93C5FD !important;
+}
+
+/* Campaign detail page — Campaign Info card values */
+.info-row span:last-child {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Progress group spacing */
+.stats-container .progress-group {
+  gap: 10px !important;
+}
+
+/* Campaign detail — message template card */
+.message-preview {
+  line-height: 1.75 !important;
+  color: var(--text-secondary) !important;
+}
+
+/* Segment card — interactive hover shimmer */
+.segment-card.interactive:hover {
+  background: linear-gradient(145deg, rgba(30,41,59,1), rgba(22,31,47,0.95)) !important;
+}
+
+/* Page subtitle accent */
+.page-subtitle {
+  background: linear-gradient(90deg, #60A5FA, #A78BFA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 500 !important;
+}
+
+/* Campaigns list — total count text */
+.campaigns-count {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
