@@ -25,3 +25,16 @@ build/
 # OS
 .DS_Store
 Thumbs.db
+
+# Database backups
+*.sql
+
+# CSV exports / generated files
+*.csv
+
+# Local backup folder
+backup_files/
+
+# Python cache
+__pycache__/
+*.pyc
