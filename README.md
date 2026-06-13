@@ -383,9 +383,3 @@ Channel Service:
 TBD
 
 ---
-
-# 👨‍💻 Author
-
-Samridh Pathak
-
-Built as a solo full-stack engineering project to explore AI-assisted customer engagement, campaign automation, analytics tracking, and distributed backend architecture.
