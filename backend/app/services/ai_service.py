@@ -13,6 +13,7 @@ import re
 
 from google import genai
 from google.genai import types
+from datetime import datetime, timedelta
 
 from app.core.config import settings
 
@@ -622,6 +623,39 @@ def parse_segment_intent_rules(user_message: str) -> dict:
 
     elif "upsell" in text:
         campaign_goal = "upsell"
+
+
+
+    inactive_match = re.search(
+        r"(\d+)\s*days",
+        text
+    )
+
+    if (
+        "haven't visited" in text
+        or "inactive" in text
+        or "not purchased" in text
+        or "re-engage" in text
+    ):
+        days = 60
+
+        if inactive_match:
+            days = int(inactive_match.group(1))
+
+        cutoff_date = (
+            datetime.utcnow() - timedelta(days=days)
+        ).strftime("%Y-%m-%d")
+
+        rules.append({
+            "field": "last_purchase_date",
+            "op": "<=",
+            "value": cutoff_date
+        })
+
+        segment_name = f"Inactive {segment_name}"
+        description = (
+            f"{description} inactive for at least {days} days"
+        )
 
     return {
         "name": segment_name,
