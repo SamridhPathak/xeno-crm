@@ -57,8 +57,8 @@ def process_send_request(
             errors += 1
             continue
 
-        # Random initial delay (1-3 seconds) simulates network/queue latency.
-        initial_delay = random.uniform(1.0, 3.0)
+        # Random initial delay (5-15 seconds) simulates network/queue latency.
+        initial_delay = random.uniform(10.0, 60.0)
 
         try:
             start_delivery_thread(

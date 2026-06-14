@@ -51,7 +51,7 @@ def simulate_opened(communication_id: int) -> None:
     _post_receipt(communication_id, "opened")
 
     if random.random() < 0.30:
-        delay = random.uniform(10.0, 15.0)
+        delay = random.uniform(5.0, 20.0)
         time.sleep(delay)
         simulate_clicked(communication_id)
 
@@ -63,7 +63,7 @@ def simulate_delivery(communication_id: int) -> None:
         _post_receipt(communication_id, "delivered")
 
         if random.random() < 0.60:
-            delay = random.uniform(5.0, 8.0)
+            delay = random.uniform(5.0, 45.0)
             time.sleep(delay)
             simulate_opened(communication_id)
 
