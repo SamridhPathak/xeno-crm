@@ -305,8 +305,32 @@ python -m uvicorn app.main:app --port 8001
 
 ---
 
-# 📌 Live Demo
+## 🚀 Live Demo & Quick Start
 
-🌐 Application: https://xeno-crm-1-7poo.onrender.com
+### 🌐 Live Application
 
----
+👉 **Frontend:** [Open XenoCRM](https://xeno-crm-1-7poo.onrender.com)
+
+### ⚡ Before You Start
+
+> 💤 This project is hosted on **Render Free Tier**.
+> The first request after inactivity may take **30–60 seconds** while services wake up.
+
+### 🎯 How to Use
+
+1. 🌐 Open the Frontend URL.
+2. ⏳ Wait a few seconds if the application is waking up.
+3. 🤖 Use **AI Copilot** to generate audience segments and campaigns.
+4. 👥 Explore **Customers** and **Segments**.
+5. 📢 Launch a campaign and monitor live analytics.
+6. 📊 Track delivery, open, click-through, and failure metrics in real time.
+
+### 🔗 API References
+
+* ⚙️ Backend API: [Open Backend Swagger UI](https://xeno-crm-2lsh.onrender.com/docs)
+* 📡 Channel Service API: [Open Channel Service Swagger UI](https://xeno-channel-service-zqgw.onrender.com/docs)
+
+### 💡 Note
+
+If the first AI Copilot request fails due to service wake-up, simply wait a few seconds and try again.
+
