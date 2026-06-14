@@ -6,9 +6,9 @@
 ![Frontend](https://img.shields.io/badge/Frontend-React-blue)
 ![Backend](https://img.shields.io/badge/Backend-FastAPI-green)
 ![Database](https://img.shields.io/badge/Database-PostgreSQL-blue)
-![Cache](https://img.shields.io/badge/Cache-Redis-red)
-![Queue](https://img.shields.io/badge/Queue-Celery-orange)
-![AI](https://img.shields.io/badge/AI-LLM%20Powered-purple)
+![Deployment](https://img.shields.io/badge/Deployment-Render-46E3B7)
+![Architecture](https://img.shields.io/badge/Architecture-Microservices-orange)
+![AI](https://img.shields.io/badge/AI-Gemini%202.5%20Flash-purple)
 
 ---
 
@@ -120,51 +120,24 @@ When the LLM is unavailable:
 
 # 🏗️ System Architecture
 
-## High-Level Architecture
-
 ```text
-                        ┌────────────────────┐
-                        │      React UI      │
-                        └─────────┬──────────┘
-                                  │
-                                  ▼
-                        ┌────────────────────┐
-                        │ FastAPI Backend    │
-                        │  CRM Engine        │
-                        └─────────┬──────────┘
-                                  │
-          ┌───────────────────────┼────────────────────────┐
-          │                       │                        │
-          ▼                       ▼                        ▼
-
- ┌────────────────┐    ┌────────────────┐      ┌────────────────┐
- │ PostgreSQL     │    │ Redis          │      │ LLM Service    │
- │ Customer Data  │    │ Task Broker    │      │ Intent Parsing │
- └────────────────┘    └────────────────┘      └────────────────┘
-                                  │
-                                  ▼
-                         ┌─────────────────┐
-                         │ Celery Workers  │
-                         └────────┬────────┘
-                                  │
-                                  ▼
-                      ┌─────────────────────────┐
-                      │ Channel Service         │
-                      │ Delivery Simulator      │
-                      └──────────┬──────────────┘
-                                 │
-                                 ▼
-                      ┌─────────────────────────┐
-                      │ Receipts API            │
-                      │ Event Processing        │
-                      └──────────┬──────────────┘
-                                 │
-                                 ▼
-                      ┌─────────────────────────┐
-                      │ Analytics Dashboard     │
-                      └─────────────────────────┘
+Frontend (React)
+        │
+        ▼
+Backend API (FastAPI)
+        │
+        ▼
+PostgreSQL Database
+        │
+        ▼
+Channel Service
+        │
+        ▼
+Delivery Receipts
+        │
+        ▼
+Analytics Dashboard
 ```
-
 ---
 
 # ⚙️ Tech Stack
@@ -186,11 +159,6 @@ When the LLM is unavailable:
 
 * PostgreSQL
 
-## Caching & Messaging
-
-* Redis
-* Celery
-
 ## AI Layer
 
 * LLM-Powered Campaign Copilot
@@ -202,32 +170,7 @@ When the LLM is unavailable:
 
 * Docker
 * Docker Compose
-
----
-
-# 🔄 Campaign Flow
-
-```text
-User
-  ↓
-AI Copilot
-  ↓
-Intent Parsing
-  ↓
-Segment Creation
-  ↓
-Campaign Draft
-  ↓
-Campaign Launch
-  ↓
-Channel Service
-  ↓
-Delivery Receipts
-  ↓
-Analytics Processing
-  ↓
-Dashboard Updates
-```
+* Render
 
 ---
 
@@ -335,27 +278,25 @@ pip install -r requirements.txt
 python -m uvicorn app.main:app --reload --port 8000
 ```
 
-## Start PostgreSQL & Redis
+## Start PostgreSQL
 
 ```bash
 docker compose up -d
 ```
 
-## Start Celery Worker
-
-```bash
-python -m celery -A app.tasks.callback_tasks worker --pool=solo --loglevel=info 
-```
-
 ## Start Channel Service
 
 ```bash
-python -m uvicorn app.main:app --port 8001 
+cd channel-service
+pip install -r requirements.txt
+python -m uvicorn app.main:app --port 8001
 ```
 ---
 
 # 🔮 Future Improvements
 
+* Redis-backed event streaming
+* Celery task queues for scalable delivery processing
 * Multi-Channel Campaign Scheduling
 * Role Based Access Control (RBAC)
 * Real Email/SMS Integrations
@@ -364,17 +305,8 @@ python -m uvicorn app.main:app --port 8001
 
 ---
 
-# 📌 Deployment
+# 📌 Live Demo
 
-Deployment links will be added after production deployment.
-
-Frontend:
-TBD
-
-Backend:
-TBD
-
-Channel Service:
-TBD
+🌐 Application: https://xeno-crm-1-7poo.onrender.com
 
 ---
